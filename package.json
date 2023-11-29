@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "eventemitter3": "^5.0.1",
-    "movement-sdk": "^1.0.4"
+    "movement-sdk": "^1.0.4",
+    "zustand": "^4.4.7"
   }
 }
