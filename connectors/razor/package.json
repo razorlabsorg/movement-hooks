@@ -1,0 +1,4 @@
+{
+  "main": "../../dist/connectors/razor.js",
+  "module": "../../dist/connectors/razor.mjs"
+}
