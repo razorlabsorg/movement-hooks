@@ -38,6 +38,7 @@ test('exports', () => {
       "useTableItem",
       "useTableItems",
       "useNetwork",
+      "useChainId",
       "useProvider",
       "useSendTransaction",
       "useSimulateTransaction",
