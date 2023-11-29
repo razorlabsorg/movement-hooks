@@ -92,8 +92,8 @@ export class MockConnector extends Connector {
     this.emit('change', { account })
   }
 
-  protected onNetworkChanged = (network: string) => {
-    this.emit('change', { network })
+  protected onNetworkChanged = (network: { networkName: string }) => {
+    this.emit('change', { network: network.networkName })
   }
   protected onDisconnect = () => {
     this.emit('disconnect')
