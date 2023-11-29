@@ -25,6 +25,7 @@
     "vitest": "^0.34.6"
   },
   "dependencies": {
+    "@ethersproject/units": "^5.7.0",
     "eventemitter3": "^5.0.1",
     "movement-sdk": "^1.0.4",
     "zustand": "^4.4.7"

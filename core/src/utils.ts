@@ -1,6 +1,23 @@
+import { HexString, TxnBuilderTypes } from "movement-sdk"
+import { Address } from "./types"
+
 export const equalsIgnoreCase = (a?: string, b?: string) => {
   if (!a || !b) return false
   return a.localeCompare(b, undefined, { sensitivity: 'accent' }) === 0
+}
+
+export const isAccountAddress = (addr: string): addr is Address => {
+  try {
+    return Boolean(
+      addr.startsWith('0x') && TxnBuilderTypes.AccountAddress.fromHex(addr) ? (addr as Address) : undefined,
+    )
+  } catch (error) {
+    return false
+  }
+}
+
+export function isHexStringEquals(hexString0: string, hexString1: string) {
+  return new HexString(hexString0).toShortString() === new HexString(hexString1).toShortString()
 }
 
 export function parseVmStatusError(vmStatus: string) {
