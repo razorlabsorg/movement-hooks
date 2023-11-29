@@ -16,9 +16,42 @@
     "movement",
     "wallets"
   ],
-  "author": "",
-  "license": "ISC",
+  "files": [
+    "dist",
+    "connectors",
+    "core/package.json"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.mjs",
+      "default": "./dist/core.js"
+    },
+    "./connectors/petra": {
+      "types": "./dist/connectors/petra.d.ts",
+      "import": "./dist/connectors/petra.mjs",
+      "default": "./dist/connectors/petra.js"
+    },
+    "./connectors/pontem": {
+      "types": "./dist/connectors/pontem.d.ts",
+      "import": "./dist/connectors/pontem.mjs",
+      "default": "./dist/connectors/pontem.js"
+    },
+    "./connectors/razor": {
+      "types": "./dist/connectors/razor.d.ts",
+      "import": "./dist/connectors/razor.mjs",
+      "default": "./dist/connectors/razor.js"
+    }
+  },
   "devDependencies": {
+    "@types/react": "^18.2.39",
+    "@types/use-sync-external-store": "^0.0.3",
     "jsdom": "^23.0.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.2",
@@ -26,8 +59,14 @@
   },
   "dependencies": {
     "@ethersproject/units": "^5.7.0",
+    "@tanstack/query-sync-storage-persister": "^4.27.1",
+    "@tanstack/react-query": "^4.28.0",
+    "@tanstack/react-query-persist-client": "^4.28.0",
     "eventemitter3": "^5.0.1",
     "movement-sdk": "^1.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "use-sync-external-store": "^1.2.0",
     "zustand": "^4.4.7"
   }
 }

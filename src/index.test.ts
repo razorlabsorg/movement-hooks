@@ -1,0 +1,53 @@
+import { expect, test } from 'vitest'
+import * as exports from './index'
+
+test('exports', () => {
+  expect(Object.keys(exports)).toMatchInlineSnapshot(`
+    [
+      "defaultChain",
+      "defaultChains",
+      "MOV_COIN",
+      "isHexStringEquals",
+      "isAccountAddress",
+      "isPendingTransaction",
+      "isUserTransaction",
+      "parseVmStatusError",
+      "isStructTag",
+      "getDefaultProviders",
+      "UserRejectedRequestError",
+      "SimulateTransactionError",
+      "ConnectorNotFoundError",
+      "ChainMismatchError",
+      "ChainNotConfiguredError",
+      "ConnectorUnauthorizedError",
+      "ConnectorAlreadyConnectedError",
+      "createClient",
+      "Context",
+      "queryClientContext",
+      "MovementHooksConfig",
+      "useClient",
+      "useAccount",
+      "useAccountResource",
+      "accountResourceQueryKey",
+      "useAccountResources",
+      "useBalance",
+      "useCoin",
+      "useConnect",
+      "useDisconnect",
+      "useLedger",
+      "useTableItem",
+      "useTableItems",
+      "useNetwork",
+      "useProvider",
+      "useSendTransaction",
+      "useSimulateTransaction",
+      "useMutation",
+      "useQuery",
+      "useQueries",
+      "useQueryClient",
+      "useAccountBalances",
+      "useCoins",
+      "useAccountBalance",
+    ]
+  `)
+})
