@@ -16,6 +16,46 @@ export const isAccountAddress = (addr: string): addr is Address => {
   }
 }
 
+export const isStructTag = (structTag: string) => {
+  try {
+    // Type args are not supported in string literal
+    if (structTag.includes('<')) {
+      throw new Error('Not implemented')
+    }
+
+    const parts = structTag.split('::').filter(Boolean)
+    if (parts.length !== 3) {
+      throw new Error('Invalid struct tag string literal.')
+    }
+
+    return true
+  } catch (err) {
+    return false
+  }
+}
+
+export const unwrapTypeFromString = (type: string) => {
+  // safari unsupported lookbehind
+  // const bracketsRegexp = /(?<=<)[^\][\r\n]*(?=>)/g
+  const bracketsRegexp = /(<)[^\][\r\n]*(>)/g
+  const match = bracketsRegexp.exec(type)
+  if (match) {
+    return match[0].substring(1).slice(0, -1)
+  }
+  return undefined
+}
+
+export const unwrapTypeArgFromString = (type: string) => {
+  // safari unsupported lookbehind
+  // const bracketsRegexp = /(?<=<)([^<>]+)(?=>)/g
+  const bracketsRegexp = /(<)([^<>]+)(>)/g
+  const match = bracketsRegexp.exec(type)
+  if (match) {
+    return match[0].substring(1).slice(0, -1)
+  }
+  return undefined
+}
+
 export function isHexStringEquals(hexString0: string, hexString1: string) {
   return new HexString(hexString0).toShortString() === new HexString(hexString1).toShortString()
 }

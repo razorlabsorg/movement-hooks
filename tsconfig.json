@@ -17,5 +17,8 @@
         "lib": ["esnext", "DOM"],
         "module": "ESNext",
         "target": "es6",
+        "paths": {
+            "movement-hooks/core": ["./core/src/index.ts"]
+        }
     }
 }
